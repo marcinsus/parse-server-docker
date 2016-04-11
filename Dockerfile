@@ -5,7 +5,6 @@ WORKDIR /usr/src/app
 
 RUN apt-get update
 RUN apt-get -y install mongodb
-CMD ["/usr/bin/mongod", "--config", "/etc/mongodb.conf"] 
 
 COPY package.json /usr/src/app/
 RUN npm install
@@ -23,7 +22,4 @@ RUN bash install_dashboard.sh
 
 EXPOSE 8080 27017 4040
 
-CMD [ "npm", "start" ]
-CMD bash start_dashboard.sh $USER_NAME $PASSWORD $APP_ID $MASTER_KEY $SERVER_URL
-
-
+ENTRYPOINT start_server.sh
