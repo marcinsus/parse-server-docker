@@ -1,4 +1,4 @@
-# parse-server-docker
+# Parse-Platform
 This is a fork of https://github.com/instainer/parse-server-docker, all the original features are included, but additional features are:
 
 - Up to date parse server (at this time of writing 2.2.6)
