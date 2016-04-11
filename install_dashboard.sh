@@ -20,4 +20,4 @@ EOF
 
 echo $config
 
-#npm install -g parse-dashboard
+npm install -g parse-dashboard
