@@ -9,13 +9,16 @@ CMD ["/usr/bin/mongod", "--config", "/etc/mongodb.conf"]
 
 COPY package.json /usr/src/app/
 RUN npm install
-RUN npm install -g parse-dashboard
 
 COPY . /usr/src/app
 
 ENV APP_ID myAppId
 ENV MASTER_KEY mySecretMasterKey
 ENV FILE_KEY optionalFileKey
+ENV USER_NAME user
+ENV PASSWORD pass
+
+RUN sh install_dashboard.sh $USER_NAME $PASSWORD
 
 EXPOSE 8080 27017 4040
 
