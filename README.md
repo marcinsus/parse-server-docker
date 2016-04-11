@@ -9,12 +9,13 @@ The main advantages over the original version is ease-of-use, higher out-of-the-
 
 ## Variables
 Environment variables and default values for parse-server;
-APP_ID myAppId
-MASTER_KEY mySecretMasterKey
-FILE_KEY optionalFileKey
-USER_NAME user
-PASSWORD pass
-SERVER_URL http://localhost:8080
+
+- APP_ID myAppId
+- MASTER_KEY mySecretMasterKey
+- FILE_KEY optionalFileKey
+- USER_NAME user
+- PASSWORD pass
+- SERVER_URL http://localhost:8080
 
 ## Running
 
