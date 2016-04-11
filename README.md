@@ -1,29 +1,34 @@
 # parse-server-docker
-Simple docker image for parse-server
+This is a fork of https://github.com/instainer/parse-server-docker, all the original features are included, but additional features are:
 
-As you might now Parse (parse.com) decided to wind down their services beginning today (January 28, 2016). To make things easier for the community, they published an open source version of their actual servers which can be run and maintained locally.
+- Up to date parse server (at this time of writing 2.2.6)
+- Dashboard included (server + dashboard in same image)
+- Optional MongoDB support (ignore this if you want to run the builtin version)
 
-If you are willing to continue to use Parse API’s in your applications, you will need to run that Parse Server on your server.
-
-You can reach the repository of the Parse Server from here: https://github.com/ParsePlatform/parse-server
-
-This Docker File helps you to install & run Parse Server on your server in just seconds.
-
-If you have any questions related to this Docker File, you can reach us out anytime by just tweeting: https://twitter.com/instainer
+The main advantages over the original version is ease-of-use, higher out-of-the-box factor and saves space and memory if you already run a MongoDB instance (since you can reuse that one)
 
 ## Variables
 Environment variables and default values for parse-server;
-APP_ID=myAppId
-MASTER_KEY=mySecretMasterKey
-FILE_KEY=optionalFileKey
+APP_ID myAppId
+MASTER_KEY mySecretMasterKey
+FILE_KEY optionalFileKey
+USER_NAME user
+PASSWORD pass
+SERVER_URL http://localhost:8080
 
 ## Running
 
-Run on Instainer
-[http://instainer.com/?deploy=instainer/parse-server](http://instainer.com/?deploy=instainer/parse-server)
+With builtin MongoDB:
 
-Quick run;
-docker run instainer/parse-server
+`docker run -d -t -i -p 1500:8080 -p 1501:4040 --name parse peterwilli/parse-platform`
 
-Custom parameters;
-docker run -d -t -i -e APP_ID='my-app' -e MASTER_KEY='master_key' -e FILE_KEY='file_key' -p 8080:8080 instainer/parse-server
+With custom (existing MongoDB):
+
+`docker run -d -t -i -p 1500:8080 -p 1501:4040 -e MONGO_URL='MY_MONGO_URL' --name parse peterwilli/parse-platform`
+
+With a Docker linked MongoDB instance (this is my setup)
+
+ - Fire up a docker mongodb instance, like this one: `docker run --name db -d mongo` if you haven't done already.
+ - run the parse instance like so: `docker run -d -t -i -p 1500:8080 -p 1501:4040 -e MONGO_URL='mongodb://db:27017/parse' -e SERVER_URL='https://parse.codebuffet.co/parse' --link db:db --name parse parse`
+
+When all is done, you should have your dashboard at `http://localhost:1501` and your parse API at `http://localhost:1500`
