@@ -6,11 +6,12 @@ var app = express();
 // Specify the connection string for your mongodb database
 // and the location to your Parse cloud code
 var api = new ParseServer({
-  databaseURI: 'mongodb://localhost:27017/dev',
+  databaseURI: process.env.MONGO_URL,
   cloud: '/usr/src/app/parse-server/cloud/main.js', // Provide an absolute path
   appId: process.env.APP_ID,
   masterKey: process.env.MASTER_KEY,
-  fileKey: process.env.FILE_KEY
+  fileKey: process.env.FILE_KEY,
+  serverURL: process.env.SERVER_URL
 });
 
 // Serve the Parse API on the /parse URL prefix
