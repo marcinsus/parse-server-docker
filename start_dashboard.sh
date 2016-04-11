@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 read -d '' config <<EOF
 {
   "users": [

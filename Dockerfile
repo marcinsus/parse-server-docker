@@ -22,4 +22,4 @@ RUN bash install_dashboard.sh
 
 EXPOSE 8080 27017 4040
 
-ENTRYPOINT /usr/src/app/start_server.sh
+ENTRYPOINT bash /usr/src/app/start_server.sh
