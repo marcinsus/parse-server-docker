@@ -17,7 +17,6 @@ read -d '' config <<EOF
   ]
 }
 EOF
-
-echo $config
+echo $config > /var/parse-dashboard-config.json
 
 npm install -g parse-dashboard
