@@ -17,7 +17,7 @@ ENV APP_ID myAppId
 ENV MASTER_KEY mySecretMasterKey
 ENV FILE_KEY optionalFileKey
 
-EXPOSE 8080 27017 
+EXPOSE 8080 27017 4040
 
 CMD [ "npm", "start" ]
 CMD [ "sh", "start_dashboard.sh" ]
