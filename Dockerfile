@@ -18,7 +18,7 @@ ENV FILE_KEY optionalFileKey
 ENV USER_NAME user
 ENV PASSWORD pass
 
-RUN sh install_dashboard.sh $USER_NAME $PASSWORD
+RUN bash install_dashboard.sh $USER_NAME $PASSWORD
 
 EXPOSE 8080 27017 4040
 
