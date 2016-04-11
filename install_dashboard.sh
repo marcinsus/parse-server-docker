@@ -9,7 +9,7 @@ read -d '' config <<EOF
   ],
   "apps": [
     {
-      "serverURL": "http://localhost:8080",
+      "serverURL": "$5",
       "appId": "$3",
       "masterKey": "$4",
       "appName": "My Parse Server App"
