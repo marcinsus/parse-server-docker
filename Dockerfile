@@ -17,8 +17,9 @@ ENV MASTER_KEY mySecretMasterKey
 ENV FILE_KEY optionalFileKey
 ENV USER_NAME user
 ENV PASSWORD pass
+ENV SERVER_URL http://localhost:8080
 
-RUN bash install_dashboard.sh $USER_NAME $PASSWORD $APP_ID $MASTER_KEY
+RUN bash install_dashboard.sh $USER_NAME $PASSWORD $APP_ID $MASTER_KEY $SERVER_URL
 
 EXPOSE 8080 27017 4040
 
