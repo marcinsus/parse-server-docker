@@ -20,6 +20,6 @@ ENV FILE_KEY optionalFileKey
 EXPOSE 8080 27017 
 
 CMD [ "npm", "start" ]
-CMD [ "npm", "startDashboard" ]
+CMD [ "sh", "start_dashboard.sh" ]
 
 
