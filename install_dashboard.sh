@@ -10,13 +10,14 @@ read -d '' config <<EOF
   "apps": [
     {
       "serverURL": "http://localhost:8080",
-      "appId": "$APP_ID",
-      "masterKey": "$MASTER_KEY",
+      "appId": "$3",
+      "masterKey": "$4",
       "appName": "My Parse Server App"
     }
   ]
 }
 EOF
+echo "Config file:\n$config"
 echo $config > /var/parse-dashboard-config.json
 
 npm install -g parse-dashboard
