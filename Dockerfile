@@ -19,11 +19,11 @@ ENV USER_NAME user
 ENV PASSWORD pass
 ENV SERVER_URL http://localhost:8080
 
-RUN bash install_dashboard.sh $USER_NAME $PASSWORD $APP_ID $MASTER_KEY $SERVER_URL
+RUN bash install_dashboard.sh
 
 EXPOSE 8080 27017 4040
 
 CMD [ "npm", "start" ]
-CMD [ "sh", "start_dashboard.sh" ]
+CMD sh start_dashboard.sh $USER_NAME $PASSWORD $APP_ID $MASTER_KEY $SERVER_URL
 
 
