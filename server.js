@@ -11,7 +11,8 @@ var api = new ParseServer({
   appId: process.env.APP_ID,
   masterKey: process.env.MASTER_KEY,
   fileKey: process.env.FILE_KEY,
-  serverURL: process.env.SERVER_URL
+  serverURL: process.env.SERVER_URL,
+  dotNetKey: process.env.DOTNET_KEY
 });
 
 // Serve the Parse API on the /parse URL prefix
