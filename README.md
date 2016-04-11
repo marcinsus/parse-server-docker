@@ -30,6 +30,6 @@ With custom (existing MongoDB):
 With a Docker linked MongoDB instance (this is my setup)
 
  - Fire up a docker mongodb instance, like this one: `docker run --name db -d mongo` if you haven't done already.
- - run the parse instance like so: `docker run -d -t -i -p 1500:8080 -p 1501:4040 -e SERVER_URL='https://parse.codebuffet.co/parse' --link db:db --name parse parse`
+ - run the parse instance like so: `docker run -d -t -i -e MONGO_URL='mongodb://db:27017/parse' -p 1500:8080 -p 1501:4040 --link db:db --name parse parse`
 
 When all is done, you should have your dashboard at `http://localhost:1501` and your parse API at `http://localhost:1500`
