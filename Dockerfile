@@ -9,6 +9,7 @@ CMD ["/usr/bin/mongod", "--config", "/etc/mongodb.conf"]
 
 COPY package.json /usr/src/app/
 RUN npm install
+RUN npm install -g parse-dashboard
 
 COPY . /usr/src/app
 
@@ -19,5 +20,6 @@ ENV FILE_KEY optionalFileKey
 EXPOSE 8080 27017 
 
 CMD [ "npm", "start" ]
+CMD [ "npm", "startDashboard" ]
 
 
