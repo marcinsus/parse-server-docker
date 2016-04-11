@@ -3,15 +3,15 @@ read -d '' config <<EOF
 {
   "users": [
     {
-      "user":"$1",
-      "pass":"$2"
+      "user":"$USER_NAME",
+      "pass":"$PASSWORD"
     }
   ],
   "apps": [
     {
-      "serverURL": "$5",
-      "appId": "$3",
-      "masterKey": "$4",
+      "serverURL": "$SERVER_URL",
+      "appId": "$APP_ID",
+      "masterKey": "$MASTER_KEY",
       "appName": "My Parse Server App"
     }
   ]
