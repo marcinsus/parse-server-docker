@@ -7,8 +7,6 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "parse-server" : "2.2.6",
-    "express": "^4.13.3",
-    "parse": "~1.6.12"
+    "parse-server" : "2.2.17"
   }
 }

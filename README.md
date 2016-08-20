@@ -1,7 +1,7 @@
 # Parse-Platform
 This is a fork of https://github.com/instainer/parse-server-docker, all the original features are included, but additional features are:
 
-- Up to date parse server (at this time of writing 2.2.6)
+- Up to date parse server (at this time of writing 2.2.17)
 - Dashboard included (server + dashboard in same image)
 - Optional MongoDB support (ignore this if you want to run the builtin version)
 
