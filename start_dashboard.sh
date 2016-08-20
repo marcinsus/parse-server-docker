@@ -3,8 +3,8 @@ read -d '' config <<EOF
 {
   "users": [
     {
-      "user":"$USER_NAME",
-      "pass":"$PASSWORD"
+      "user":"$APP_ID",
+      "pass":"$MASTER_KEY"
     }
   ],
   "apps": [
