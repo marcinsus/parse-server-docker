@@ -16,7 +16,7 @@ ENV MASTER_KEY mySecretMasterKey
 ENV FILE_KEY optionalFileKey
 ENV USER_NAME user
 ENV PASSWORD pass
-ENV SERVER_URL http://localhost:8080
+ENV SERVER_URL http://localhost:1500/parse
 ENV DOTNET_KEY myDotNetKey
 
 RUN bash install_dashboard.sh
